@@ -2,6 +2,11 @@
 const b1 = document.getElementById("b1");
 const b2 = document.getElementById("b2");
 const b3 = document.getElementById("b3");
+const nickName = document.getElementById("nickName");
+
+let textAppear = false;
+let redText = document.getElementById("red");
+let isName = prompt("What's your nickname?");
 
 b1.onmouseover = function() {
    b1.style.backgroundColor = "#db0f27";
@@ -17,6 +22,15 @@ b1.onmouseout = function() {
    b1.style.transition = "all 0.6s ease";
 }
 
+b1.onclick = function() {
+   textAppear = !textAppear;
+   if(textAppear) {
+      redText.textContent = "RED!";
+   } else {
+      redText.textContent = "";
+   }
+}
+
 b2.onmouseover = function() {
    b2.style.boxShadow = "0 0 15px 5px #008ecc";
    b2.style.backgroundColor = "transparent";
@@ -27,6 +41,16 @@ b2.onmouseout = function() {
    b2.style.boxShadow = "";
    b2.style.backgroundColor = "";
    b2.style.transition = "all 0.6s ease";
+}
+
+b2.onclick = function() {
+   textAppear = !textAppear;
+   isName;
+   if(textAppear) {
+      nickName.textContent = `Hello ${isName}!`;
+   } else {
+      nickName.textContent = "";
+   }
 }
 
 b3.onmouseover = function() {
