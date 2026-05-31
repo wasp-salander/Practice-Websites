@@ -3,6 +3,7 @@ const b1 = document.getElementById("b1");
 const b2 = document.getElementById("b2");
 const b3 = document.getElementById("b3");
 const nickName = document.getElementById("nickName");
+const amongUsSound = new Audio("among_us_sound.mp3");
 
 let textAppear = false;
 let redText = document.getElementById("red");
@@ -54,9 +55,14 @@ b2.onclick = function() {
 }
 
 b3.onmouseover = function() {
-   
+   b3.style.fontSize = "0.9em";
 }
 
 b3.onmouseout = function() {
-   
+   b3.style.fontSize = "";
+}
+
+b3.onclick = function() {
+   amongUsSound.currentTime = 0;
+   amongUsSound.play();
 }
