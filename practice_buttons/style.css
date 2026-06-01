@@ -119,16 +119,21 @@ body.color-mode {
    font-family: Georgia, serif;
 }
 
-#b5.light-mode {
+#b5.slide {
    background-position: right center;
    color: #faf5ef;
 }
 
 #b5.dark-mode {
-   background: #2d3b43;
+   background: linear-gradient(60deg, #2d3b43, #88807b, #2d3b43);
+   background-size: 200% 100%;
 }
 
-#b5.light-text {
+#b5.dark-mode.slide {
+   background-position: right center;
+}
+
+#b5.lightDark-text {
    color: #faf5ef;
 }
 

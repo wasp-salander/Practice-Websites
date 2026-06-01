@@ -8,12 +8,13 @@ const b5 = document.getElementById("b5");
 const b6 = document.getElementById("b6");
 
 const header = document.getElementById("header");
+const nickName = document.getElementById("nickName");
 const danger = document.getElementById("danger");
-const sexy = document.getElementById("sexy");
+const lightDark = document.getElementById("lightDark");
 const error = document.getElementById("error");
+
 const defaultText = b6.textContent;
 const characters = "!@#$%^&*()_+~`|}{[]\:;?><,./0123456789";
-const nickName = document.getElementById("nickName");
 const amongUsSound = new Audio("among_us_sound.mp3");
 //#endregion
 
@@ -96,30 +97,32 @@ b4.onmouseout = function() {
 }
 
 b5.onmouseover = function() {
-   b5.classList.add("light-mode");
-   b5.classList.add("light-text");
+   b5.classList.add("slide");
+   b5.classList.add("lightDark-text");
 }
 
 b5.onmouseout = function() {
-   b5.classList.remove("light-mode");
-   b5.classList.remove("light-text");
+   b5.classList.remove("slide");
+   b5.classList.remove("lightDark-text");
 }
 
 b5.onclick = function() {
    lightMode = !lightMode
    
    if(lightMode) {
-   document.body.classList.add("color-mode");
-   header.classList.add("appear");
-   b5.classList.add("dark-mode");
+      document.body.classList.add("color-mode");
+      header.classList.add("appear");
+      b5.classList.add("dark-mode");
+      lightDark.textContent = "DARK";
 
    setTimeout(() => {
       header.classList.remove("appear");
-   }, 2000);
+   }, 1500);
+
    } else {
       document.body.classList.remove("color-mode");
       b5.classList.remove("dark-mode");
-
+      lightDark.textContent = "LIGHT";
    }
 }
 
