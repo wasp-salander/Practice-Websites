@@ -1,14 +1,30 @@
 
+//#region --- CONSTANTS / DOM ELEMENTS ---
 const b1 = document.getElementById("b1");
 const b2 = document.getElementById("b2");
 const b3 = document.getElementById("b3");
+const b4 = document.getElementById("b4");
+const b5 = document.getElementById("b5");
+const b6 = document.getElementById("b6");
+
+const header = document.getElementById("header");
+const danger = document.getElementById("danger");
+const sexy = document.getElementById("sexy");
+const error = document.getElementById("error");
+const defaultText = b6.textContent;
+const characters = "!@#$%^&*()_+~`|}{[]\:;?><,./0123456789";
 const nickName = document.getElementById("nickName");
 const amongUsSound = new Audio("among_us_sound.mp3");
+//#endregion
 
+//#region --- STATE ---
+let lightMode = false;
 let textAppear = false;
 let redText = document.getElementById("red");
 let isName = prompt("What's your nickname?");
+//#endregion
 
+//#region --- EVENT LISTENERS ---
 b1.onmouseover = function() {
    b1.style.backgroundColor = "#db0f27";
    b1.style.borderColor = "#db0f27";
@@ -65,4 +81,83 @@ b3.onmouseout = function() {
 b3.onclick = function() {
    amongUsSound.currentTime = 0;
    amongUsSound.play();
+}
+
+b4.onmouseover = function() {
+   b4.style.boxShadow = "0 0 1px 1.8px #ff3333";
+   danger.classList.add("error-glitch");
+   setTimeout(() => {
+      danger.classList.remove('error-glitch');
+   }, 500);
+}
+
+b4.onmouseout = function() {
+   b4.style.boxShadow = "";
+}
+
+b5.onmouseover = function() {
+   b5.classList.add("light-mode");
+   b5.classList.add("light-text");
+}
+
+b5.onmouseout = function() {
+   b5.classList.remove("light-mode");
+   b5.classList.remove("light-text");
+}
+
+b5.onclick = function() {
+   lightMode = !lightMode
+   
+   if(lightMode) {
+   document.body.classList.add("color-mode");
+   header.classList.add("appear");
+   b5.classList.add("dark-mode");
+
+   setTimeout(() => {
+      header.classList.remove("appear");
+   }, 2000);
+   } else {
+      document.body.classList.remove("color-mode");
+      b5.classList.remove("dark-mode");
+
+   }
+}
+
+b6.onmouseover = function() {
+   if (b6.disabled) return;
+  b6.disabled = true;
+
+  let iteracio = 0;
+  
+  // Ez az időzítő felel a lassabb, ütemesebb pörgetésért
+  let timer = setInterval(() => {
+    
+    b6.textContent = defaultText
+      .split("") // Szétszedjük a szöveget betűkre
+      .map((betu, index) => {
+        // Ha az adott betűnél már "túl vagyunk" az iteráción, 
+        // akkor visszaadjuk a végleges, jó betűt
+        if (index < iteracio) {
+          return defaultText[index];
+        }
+        
+        // Ha szóköz van, azt ne bántsuk
+        if (betu === " ") return " ";
+        
+        // Különben dobjon be egy random hiba-karaktert
+        return characters[Math.floor(Math.random() * characters.length)];
+      })
+      .join(""); // Visszafűzzük szöveggé
+    
+    // Ha a végére értünk a szövegnek, leállítjuk
+    if (iteracio >= defaultText.length) {
+      clearInterval(timer);
+      b6.disabled = false;
+    }
+    
+    // Ezzel a számmal szabályozod a sebességet: 
+    // a 0.3 azt jelenti, hogy egy betű kb. 3-4-szer villan meg, mielőtt fixálódna.
+    iteracio += 0.3; 
+    
+  }, 60); // 40 ms-onként frissül (szép, folyamatos mozgás)
 }

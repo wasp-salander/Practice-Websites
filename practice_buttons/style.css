@@ -5,23 +5,49 @@ body {
    min-height: 100vh;
    align-items: center;
    justify-content: center;
-   background-color: #2d3b43;
+   background: #2d3b43;
 }
 
 button {
    font-family: Tahoma;
    font-weight: bold;
    font-size: 12px;
+   letter-spacing: 2px;
    box-shadow: none;
    border: none;
 }
 
+/* #region CLASS elements */
 .text {
    display: flex;
    justify-content: space-between;
    width: 330px;
    height: 50px;
    margin-bottom: 2px;
+}
+
+.buttons {
+   display: grid;
+   grid-template-columns: repeat(2, 150px);
+   grid-template-rows: repeat(3, 50px);
+   row-gap: 25px;
+   column-gap: 30px;
+   margin-bottom: 260px;
+}
+/* #endregion */
+
+/* #region ID elements */
+#header {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   margin-top: 2.5em;
+   margin-bottom: auto;
+
+   opacity: 0;
+   transition: opacity 0.6s ease;
+   color: #faf5ef;
+   font-family: Georgia, serif;
 }
 
 #red, #nickName {
@@ -41,15 +67,9 @@ button {
    color: #faf5ef;
    font-family: monospace;
 }
+/* #endregion */
 
-.buttons {
-   display: grid;
-   grid-template-columns: repeat(2, 150px);
-   grid-template-rows: repeat(3, 50px);
-   row-gap: 25px;
-   column-gap: 30px;
-}
-
+/* #region BUTTONS */
 #b1 {
    border: 2.3px solid #b22222;
    border-radius: 7px;
@@ -71,7 +91,73 @@ button {
 
 #b4 {
    border-radius: 7px;
-   border: 2.3px solid green;
+   border: 2.3px solid #88e788;
    background: transparent;
-   color: green;
+   color: #88e788;
 }
+
+#b5 {
+   background: linear-gradient(60deg, #c71585, #d6b85a, #c71585);
+   background-size: 200% 100%;
+   background-position: left center;
+   transition: all 0.6s ease;
+   color: transparent;
+   -webkit-text-stroke: 0.8px white;
+   border-radius: 8px;
+}
+/* #endregion */
+
+/* #region EFFECTS */
+body.color-mode {
+   background: linear-gradient(60deg, #8eb1c2, #d291bc);  /* #8eb1c2 */
+}
+
+#header.appear {
+   opacity: 1;
+   transition: opacity 0.6 ease;
+   color: #faf5ef;
+   font-family: Georgia, serif;
+}
+
+#b5.light-mode {
+   background-position: right center;
+   color: #faf5ef;
+}
+
+#b5.dark-mode {
+   background: #2d3b43;
+}
+
+#b5.light-text {
+   color: #faf5ef;
+}
+
+.error-glitch {
+  animation: glitch 0.3s linear infinite;
+  color: #fff;
+  position: relative;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px -2px 0 #ff00c1, -2px 2px 0 #f9e076;
+    transform: skewX(0deg);
+  }
+  25% {
+    text-shadow: -3px 3px 0 #ff00c1, 3px -3px 0 #f9e076;
+    transform: skewX(-5deg);
+  }
+  50% {
+    text-shadow: 2px 2px 0 #ff00c1, -2px -2px 0 #f9e076;
+    transform: skewX(5deg);
+  }
+  75% {
+    text-shadow: -1px -1px 0 #ff00c1, 1px 1px 0 #f9e076;
+    transform: skewX(-2deg);
+  }
+  100% {
+    text-shadow: 2px -2px 0 #ff00c1, -2px 2px 0 #f9e076;
+    transform: skewX(0deg);
+  }
+}
+/* #endregion */
