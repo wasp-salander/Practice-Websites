@@ -105,6 +105,10 @@ button {
    -webkit-text-stroke: 0.8px white;
    border-radius: 8px;
 }
+
+#b6 {
+   border-radius: 7px;
+}
 /* #endregion */
 
 /* #region EFFECTS */
@@ -117,6 +121,11 @@ body.color-mode {
    transition: opacity 0.6 ease;
    color: #faf5ef;
    font-family: Georgia, serif;
+}
+
+#b4.color-switch {
+   color: #dffe00;
+   border-color: #dffe00;
 }
 
 #b5.slide {

@@ -96,6 +96,10 @@ b4.onmouseout = function() {
    b4.style.boxShadow = "";
 }
 
+b4.onclick = function() {
+   b4.classList.toggle("color-switch");
+}
+
 b5.onmouseover = function() {
    b5.classList.add("slide");
    b5.classList.add("lightDark-text");
@@ -108,12 +112,12 @@ b5.onmouseout = function() {
 
 b5.onclick = function() {
    lightMode = !lightMode
-   
+
    if(lightMode) {
       document.body.classList.add("color-mode");
       header.classList.add("appear");
       b5.classList.add("dark-mode");
-      lightDark.textContent = "DARK";
+      lightDark.textContent = ("DARK");
 
    setTimeout(() => {
       header.classList.remove("appear");
@@ -122,7 +126,7 @@ b5.onclick = function() {
    } else {
       document.body.classList.remove("color-mode");
       b5.classList.remove("dark-mode");
-      lightDark.textContent = "LIGHT";
+      lightDark.textContent = ("LIGHT");
    }
 }
 
