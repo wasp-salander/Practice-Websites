@@ -1,0 +1,41 @@
+
+body {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   gap: 25px;
+   background: #e5edf3;
+}
+
+#countLabel {
+   position: absolute;
+   bottom: calc(50vh + 50px);
+   display: block;
+   text-align:center;
+
+   font-size: 5em;
+   font-family: Impact;
+}
+#btnContainer {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   gap: 10px;
+}
+
+button {
+   padding: 10px 20px;
+   border-radius: 5px;
+   border: none;
+   background: #ff746c;
+   color: #f9f9f7;
+   font-size: 1.1em;
+   font-family: verdana;
+   transition: background 0.25s;
+}
+button:hover {
+   background: #ff5a50;
+}
