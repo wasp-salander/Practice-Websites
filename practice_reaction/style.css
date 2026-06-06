@@ -69,7 +69,7 @@ p {
       top: 22vh;
    }
    #dots {
-      top: 12vh;
+      top: 32vh;
       font-size: 3.5em;
    }
    #header {
@@ -78,7 +78,7 @@ p {
       text-align: center;
    }
    p {
-      bottom: 25vh;
+      bottom: 30vh;
       font-size: 1.1em;
    }
 }
