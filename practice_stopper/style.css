@@ -1,0 +1,55 @@
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: #e5edf3;
+}
+p {
+   text-align: center;
+   font-size: 3em;
+}
+button {
+   padding: 10px 22px;
+   border-radius: 5px;
+   border: none;
+   background: #787276;
+   color: white;
+   font-family: Tahoma;
+   font-weight: bold;
+   transition: all 6ms;
+}
+
+#stopper {
+   display: block;
+}
+#counter {
+   margin: 20px 0px 20px 0px;
+}
+#buttons {
+   display:flex;
+   gap: 10px
+}
+
+button:hover {
+   scale: 1.05;
+}
+
+.blinkStop {
+   animation: blink 1s infinite;
+}
+.blinkReset {
+   animation: blink 0.5s;
+   color: #ba110c;
+}
+
+@keyframes blink {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
