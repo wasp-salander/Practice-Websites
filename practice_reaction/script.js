@@ -2,7 +2,8 @@
 const zone = document.body;
 const dots = document.getElementById("dots");
 const header = document.getElementById("header");
-const text = document.getElementById("text");
+const text1 = document.getElementById("text1");
+const text2 = document.getElementById("text2");
 const image = document.getElementById("image");
 
 let state = "start";
@@ -16,7 +17,8 @@ zone.addEventListener('click', () => {
       image.style.display = "none";
       dots.textContent = "...";
       header.textContent = "Wait for green";
-      text.textContent = "";
+      text1.textContent = "";
+      text2.textContent = "";
 
       const randomTime = Math.floor(Math.random() * 3000) + 2000;
 
@@ -24,7 +26,8 @@ zone.addEventListener('click', () => {
          state = "click";
          zone.className = "green";
          header.textContent = "Click!";
-         text.textContent = "";
+         text1.textContent = "";
+         text2.textContent = "";
          startTime = performance.now();
       }, randomTime);
 
@@ -34,7 +37,8 @@ zone.addEventListener('click', () => {
       zone.className = "blue";
       dots.textContent = "!";
       header.textContent = "Too soon!";
-      text.textContent = "Click to try again.";
+      text1.textContent = "Click to try again.";
+      text2.textContent = "";
 
    } else if(state === "click") {
       const finalTime = performance.now();
@@ -44,6 +48,7 @@ zone.addEventListener('click', () => {
       zone.className = "blue";
       dots.textContent = "⏱";
       header.textContent = `${reactionTime} ms`;
-      text.textContent = "Click to keep going";
+      text1.textContent = "Click to keep going";
+      text2.textContent = "";
    }
 });

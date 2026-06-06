@@ -30,7 +30,15 @@ img {
    max-width: 90%;
    white-space: nowrap;
 }
-p {
+#text1 {
+   position: absolute;
+   bottom: 39vh;
+   text-align: center;
+   margin: 0;
+   max-width: 90%;
+   font-size: 1.5em;
+}
+#text2 {
    position: absolute;
    bottom: 35vh;
    text-align: center;
@@ -66,19 +74,23 @@ p {
 @media (max-width: 480px) {
    img {
       height: 10vh;
-      top: 22vh;
+      top: 30vh;
    }
    #dots {
-      top: 32vh;
+      top: 29vh;
       font-size: 3.5em;
    }
    #header {
-      font-size: 2.2em;
+      font-size: 2.4em;
       white-space: normal;
       text-align: center;
    }
-   p {
-      bottom: 30vh;
-      font-size: 1.1em;
+   #text1 {
+      bottom: 39vh;
+      font-size: 1.08em;
+   }
+   #text2 {
+      bottom: 35vh;
+      font-size: 1.08em;
    }
 }
