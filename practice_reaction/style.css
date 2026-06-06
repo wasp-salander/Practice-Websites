@@ -27,6 +27,7 @@ img {
    margin: 0;
    font-size: 4.7em;
    font-weight: 400;
+   max-width: 90%;
    white-space: nowrap;
 }
 p {
@@ -34,6 +35,7 @@ p {
    bottom: 35vh;
    text-align: center;
    margin: 0;
+   max-width: 90%;
    font-size: 1.5em;
 }
 #dots {
@@ -59,5 +61,24 @@ p {
    }
    100% {
       opacity: 1;
+   }
+}
+@media (max-width: 480px) {
+   img {
+      height: 10vh;
+      top: 22vh;
+   }
+   #dots {
+      top: 12vh;
+      font-size: 3.5em;
+   }
+   #header {
+      font-size: 2.2em;
+      white-space: normal;
+      text-align: center;
+   }
+   p {
+      bottom: 25vh;
+      font-size: 1.1em;
    }
 }
