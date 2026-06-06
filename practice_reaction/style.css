@@ -8,6 +8,8 @@ body {
    justify-content: center;
    align-items: center;
    position: relative;
+   margin: 0;
+   overflow: hidden;
 
    background: #2b87d1;
    font-family: 'Roboto';
@@ -15,28 +17,28 @@ body {
    cursor: pointer;
 }
 img {
-   height: 120px;
+   height: 14vh;
    position: absolute;
-   bottom: calc(50vh + 80px);
+   top: 25vh;
 
    animation: blink 1s infinite alternate;
 }
 #header {
    margin: 0;
-   font-size: 5em;
+   font-size: 4.7em;
    font-weight: 400;
+   white-space: nowrap;
 }
 p {
    position: absolute;
-   top: calc(50vh + 50px);
+   bottom: 35vh;
    text-align: center;
    margin: 0;
    font-size: 1.5em;
 }
 #dots {
    position: absolute;
-   bottom: calc(50vh + 40px);
-   margin-bottom: 0.5em;
+   top: 15vh;
    font-size: 6em;
    font-weight: 900;
 }
