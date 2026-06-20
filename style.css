@@ -10,23 +10,38 @@ body {
    background: #fef9f3;
    font-family: Verdana;
 }
-h1 {
-   position: absolute;
-   top: 30vh;
-   font-size: 3em;
-}
-p {
-   position: absolute;
-   top: 42vh;
-   font-weight: 500;
-   font-size: 1.2em;
-}
-#navBar {
+.navBar {
    position: absolute;
    top: 10vh;
    display: flex;
    flex-direction: row;
    gap: 34px;
+}
+.navBar2 {
+   position: absolute;
+   top: 19vh;
+   display: flex;
+   flex-direction: row;
+   gap: 34px;
+}
+.container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+h1 {
+   position: absolute;
+   top: 35vh;
+   margin: 0;
+   font-size: 3em;
+}
+p {
+   position: absolute;
+   top: 45vh;
+   margin: 0;
+   font-weight: 500;
+   font-size: 1.2em;
 }
 button {
    padding: 11px 22px;
