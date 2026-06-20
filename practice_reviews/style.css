@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+   height: 100vh;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: #f1f5f8;
+}
+h2 {
+   margin-bottom: 6px;
+}
+.title {
+   margin-bottom: 40px;
+   font-size: 1.4em;
+}
+.underline {
+   width: 70px;
+   height: 3px;
+   background: #49a6ea;
+}
+.container, .review-card, .review, .title {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.review-card {
+   text-align: center;
+   width: 450px;
+   height: 450px;
+   margin-bottom: 40px;
+   padding: 30px 40px 30px 40px;
+   background: white;
+   border-radius: 8px;
+   box-shadow: 0px 0px 10px 5px #e5e6e5;
+}
+.review {
+   margin-bottom: auto;
+}
+.img-container {
+   height: 150px;
+   width: 150px;
+   margin-bottom: 15px;
+   border-radius: 50%;
+   overflow: hidden;
+   box-shadow: 6px -6px #49a6ea; 
+}
+#avatar {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+.title, .name {
+   letter-spacing: 2px;
+   font-family: Rubik;
+   color: #102b42;
+}
+.name, .job {
+   margin: 3px;
+}
+.job, .info {
+   font-family: Nunito;
+   letter-spacing: 0.3px;
+}
+.job {
+   margin-bottom: 10px;
+   text-transform: uppercase;
+   font-size: 0.9em;
+   font-weight: bold;
+   color: #4da9eb;
+}
+.info {
+   width: 100%;
+   margin: 0;
+   line-height: 1.3em;
+   color: #6183a7;
+}
+.btn-container {
+   display: flex;
+   gap: 340px;
+}
+.btn-container button {
+   padding: 10px 10px;
+   font-size: 1.2em;
+   background: transparent;
+   border: none;
+   color: #4da9eb;
+   cursor: pointer;
+}
+.random-btn button {
+   padding: 4px 9px;
+   background: #ecf7ff;
+   border-radius: 8px;
+   border-color: #4da9eb;
+   color: #4da9eb;
+   font-weight: bold;
+   cursor: pointer;
+   transition: all 0.2s ease;
+}
+.btn-container button:hover {
+   color: #2a8cd0;
+}
+.random-btn button:hover {
+   background: #faffff;
+   color: #6ebbee;
+}
