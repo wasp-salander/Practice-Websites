@@ -47,6 +47,7 @@ h2 {
    width: 150px;
    margin-bottom: 15px;
    border-radius: 50%;
+   border: 3.2px solid white;
    overflow: hidden;
    box-shadow: 6px -6px #49a6ea; 
 }
